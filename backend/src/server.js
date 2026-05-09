@@ -19,7 +19,10 @@ const port = process.env.PORT || 5000;
 const clientUrl = process.env.CLIENT_URL || "http://localhost:5173";
 
 const app = express();
-app.use(cors({ origin: clientUrl, credentials: true }));
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}));
 app.use(express.json());
 
 const pharmacySockets = new Map();

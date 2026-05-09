@@ -1,3 +1,5 @@
+import API from "../api";
+
 import { useCallback, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Activity, Bell, CheckCircle, LogOut, Pill, Wifi, WifiOff, XCircle } from "lucide-react";
