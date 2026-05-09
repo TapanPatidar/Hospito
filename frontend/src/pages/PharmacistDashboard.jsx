@@ -5,10 +5,10 @@ import axios from "axios";
 import { Activity, Bell, CheckCircle, LogOut, Pill, Wifi, WifiOff, XCircle } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 
-const API = "/api";
+
 const WS_URL = `${window.location.protocol === "https:" ? "wss" : "ws"}://${window.location.host}`;
 
-function StatusBadge({ status }) {
+function StatusBadge({ sstatus }) {
   const colors = {
     pending: "bg-yellow-100 text-yellow-800",
     fulfilled: "bg-green-100 text-green-800",

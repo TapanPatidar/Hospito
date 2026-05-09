@@ -5,7 +5,7 @@ import axios from "axios";
 import { Activity, AlertTriangle, Clock, LogOut, Pill, User } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 
-const API = "/api";
+
 
 function StatusBadge({ status }) {
   const colors = {
