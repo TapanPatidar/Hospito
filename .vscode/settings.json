@@ -1,0 +1,6 @@
+{
+  "git.ignoreLimitWarning": true,
+  "liveServer.settings.root": "/frontend/dist",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.NoBrowser": false
+}

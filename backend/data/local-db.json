@@ -1,0 +1,198 @@
+{
+  "users": [
+    {
+      "id": "patient-alice-001",
+      "email": "patient@demo.com",
+      "name": "Alice Johnson",
+      "role": "patient",
+      "password": "Patient@2025!",
+      "date_of_birth": "1990-05-15",
+      "blood_type": "O+",
+      "phone": "+1-555-0101",
+      "medical_history": [
+        {
+          "condition": "Hypertension",
+          "diagnosed": "2020-01-10",
+          "status": "active"
+        },
+        {
+          "condition": "Type 2 Diabetes",
+          "diagnosed": "2019-06-22",
+          "status": "active"
+        }
+      ],
+      "allergies": [
+        "Penicillin",
+        "Sulfa drugs"
+      ],
+      "created_at": "2026-04-07T19:56:17.314Z",
+      "passwordHash": "$2a$10$YHi8r0rGVJmyLg5MdWFpIu0ayTgpYWmMOqkXVWFvj6fESUOe2Ra/6"
+    },
+    {
+      "id": "patient-marcus-001",
+      "email": "marcus@demo.com",
+      "name": "Marcus Lee",
+      "role": "patient",
+      "password": "Patient@2025!",
+      "date_of_birth": "1985-11-03",
+      "blood_type": "A+",
+      "phone": "+1-555-0102",
+      "medical_history": [
+        {
+          "condition": "Asthma",
+          "diagnosed": "2016-03-14",
+          "status": "active"
+        }
+      ],
+      "allergies": [
+        "Dust"
+      ],
+      "created_at": "2026-04-15T19:56:17.315Z",
+      "passwordHash": "$2a$10$W7w0ylhn7KcwoMcb9.LSqO1ruBwl8r3o/adMvpgWeBYmGVFqCXaiC"
+    },
+    {
+      "id": "patient-sofia-001",
+      "email": "sofia@demo.com",
+      "name": "Sofia Patel",
+      "role": "patient",
+      "password": "Patient@2025!",
+      "date_of_birth": "1996-08-20",
+      "blood_type": "B+",
+      "phone": "+1-555-0103",
+      "medical_history": [
+        {
+          "condition": "Migraine",
+          "diagnosed": "2022-09-01",
+          "status": "active"
+        }
+      ],
+      "allergies": [],
+      "created_at": "2026-04-23T19:56:17.315Z",
+      "passwordHash": "$2a$10$YBEp4qvavfI1fFvsU7rUxu3FaOs9NjiCFXrc/rhx7nseZpLfNOsrm"
+    },
+    {
+      "id": "doctor-robert-001",
+      "email": "doctor@demo.com",
+      "name": "Dr. Robert Chen",
+      "role": "doctor",
+      "password": "Doctor@2025!",
+      "specialization": "Internal Medicine",
+      "license_number": "MD-2021-78432",
+      "phone": "+1-555-0202",
+      "created_at": "2026-04-07T19:56:17.315Z",
+      "passwordHash": "$2a$10$tNIJgbQfz893By7go5FiAeHDIdXXU.2cvVHWZTcRw21arHk3KNjCu"
+    },
+    {
+      "id": "pharmacy-healthcare-001",
+      "email": "pharmacist@demo.com",
+      "name": "Sarah Williams",
+      "role": "pharmacist",
+      "password": "Pharma@2025!",
+      "pharmacy_name": "HealthCare Pharmacy",
+      "license_number": "RPH-2019-11234",
+      "phone": "+1-555-0303",
+      "created_at": "2026-04-07T19:56:17.315Z",
+      "passwordHash": "$2a$10$B/drr0KIDWwibOJ7Yyks2OKTlZhpja.2zwxv2d8YGgS3zuhIglYAa"
+    },
+    {
+      "id": "pharmacy-manish-001",
+      "email": "manish@gmail.com",
+      "name": "Manish",
+      "role": "pharmacist",
+      "password": "Pharma@2025!",
+      "pharmacy_name": "Manish Pharma",
+      "license_number": "RPH-903-067",
+      "phone": "",
+      "created_at": "2026-04-27T19:56:17.315Z",
+      "passwordHash": "$2a$10$mnfens9kDzeVsmR3xo3QMusj85v1bIUXkBLjEyOEJ6qkzAA4U2vIq"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "c36ab508-efa6-4129-9247-90b957263b60",
+      "userId": "doctor-robert-001",
+      "token": "dfa96ed1-29b6-43dd-bff6-9e297a31a430",
+      "created_at": "2026-05-07T19:56:19.974Z"
+    }
+  ],
+  "prescriptions": [
+    {
+      "id": "rx-001",
+      "patient_id": "patient-alice-001",
+      "pharmacy_id": "pharmacy-healthcare-001",
+      "prescriber_id": "doctor-robert-001",
+      "prescriber_name": "Dr. Robert Chen",
+      "patient_name": "Alice Johnson",
+      "pharmacy_name": "HealthCare Pharmacy",
+      "medication_name": "Metformin",
+      "dosage": "500mg",
+      "frequency": "Twice daily",
+      "duration": "30 days",
+      "notes": null,
+      "diagnosis": "Type 2 Diabetes",
+      "status": "rejected",
+      "created_at": "2026-05-01T19:56:17.315Z",
+      "updated_at": "2026-05-02T19:56:17.315Z"
+    },
+    {
+      "id": "rx-002",
+      "patient_id": "patient-alice-001",
+      "pharmacy_id": "pharmacy-healthcare-001",
+      "prescriber_id": "doctor-robert-001",
+      "prescriber_name": "Dr. Robert Chen",
+      "patient_name": "Alice Johnson",
+      "pharmacy_name": "HealthCare Pharmacy",
+      "medication_name": "Paracetamol",
+      "dosage": "500mg",
+      "frequency": "Twice daily",
+      "duration": "7 days",
+      "notes": "Give particular advice to patient",
+      "diagnosis": "Viral fever",
+      "status": "fulfilled",
+      "created_at": "2026-05-04T19:56:17.315Z",
+      "updated_at": "2026-05-05T19:56:17.315Z"
+    },
+    {
+      "id": "rx-003",
+      "patient_id": "patient-marcus-001",
+      "pharmacy_id": "pharmacy-manish-001",
+      "prescriber_id": "doctor-robert-001",
+      "prescriber_name": "Dr. Robert Chen",
+      "patient_name": "Marcus Lee",
+      "pharmacy_name": "Manish Pharma",
+      "medication_name": "Albuterol Inhaler",
+      "dosage": "2 puffs",
+      "frequency": "As needed",
+      "duration": "30 days",
+      "notes": "Monitor rescue inhaler usage",
+      "diagnosis": "Asthma",
+      "status": "pending",
+      "created_at": "2026-05-07T19:56:17.315Z",
+      "updated_at": "2026-05-07T19:56:17.315Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-001",
+      "pharmacy_id": "pharmacy-healthcare-001",
+      "prescription_id": "rx-001",
+      "type": "new_prescription",
+      "medication_name": "Metformin",
+      "patient_name": "Alice Johnson",
+      "prescriber_name": "Dr. Robert Chen",
+      "created_at": "2026-05-01T19:56:17.315Z",
+      "read": false
+    },
+    {
+      "id": "notif-002",
+      "pharmacy_id": "pharmacy-healthcare-001",
+      "prescription_id": "rx-002",
+      "type": "new_prescription",
+      "medication_name": "Paracetamol",
+      "patient_name": "Alice Johnson",
+      "prescriber_name": "Dr. Robert Chen",
+      "created_at": "2026-05-04T19:56:17.315Z",
+      "read": false
+    }
+  ]
+}

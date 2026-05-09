@@ -1,0 +1,25 @@
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: #1c1917;
+  background: #faf9f6;
+  font-family: "Work Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+img {
+  display: block;
+}

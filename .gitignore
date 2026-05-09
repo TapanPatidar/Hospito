@@ -1,0 +1,7 @@
+node_modules/
+.tools/
+.mongodb-portable/
+video_frames/
+.env
+dist/
+build/
