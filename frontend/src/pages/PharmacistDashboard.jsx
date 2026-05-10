@@ -6,8 +6,7 @@ import { Activity, Bell, CheckCircle, LogOut, Pill, Wifi, WifiOff, XCircle } fro
 import { useAuth } from "../context/AuthContext";
 
 
-const WS_URL = `${window.location.protocol === "https:" ? "wss" : "ws"}://${window.location.host}`;
-
+const WS_URL = "wss://hospito-yz1a.onrender.com";
 function StatusBadge({ sstatus }) {
   const colors = {
     pending: "bg-yellow-100 text-yellow-800",

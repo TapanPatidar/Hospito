@@ -1,2 +1,3 @@
-const API = import.meta.env.VITE_API_URL;
+const API = "https://hospito-yz1a.onrender.com";
+
 export default API;
