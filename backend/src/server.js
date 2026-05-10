@@ -48,12 +48,17 @@ function sanitizeUser(user) {
 }
 
 function setSessionCookie(res, token) {
-  res.cookie?.(sessionCookieName, token);
-  res.setHeader("Set-Cookie", `${sessionCookieName}=${encodeURIComponent(token)}; HttpOnly; Path=/; SameSite=Lax`);
+  res.setHeader(
+    "Set-Cookie",
+    `${sessionCookieName}=${encodeURIComponent(token)}; HttpOnly; Path=/; SameSite=None; Secure`
+  );
 }
 
 function clearSessionCookie(res) {
-  res.setHeader("Set-Cookie", `${sessionCookieName}=; HttpOnly; Path=/; SameSite=Lax; Max-Age=0`);
+  res.setHeader(
+    "Set-Cookie",
+    `${sessionCookieName}=; HttpOnly; Path=/; SameSite=None; Secure; Max-Age=0`
+  );
 }
 
 async function ensureDb() {
