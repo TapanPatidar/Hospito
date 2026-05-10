@@ -2,7 +2,7 @@ import API from "../api";
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 
-// IMPORTANT: keep credentials ON
+// keep cookies enabled
 axios.defaults.withCredentials = true;
 
 const AuthContext = createContext(null);
@@ -10,10 +10,10 @@ const AuthContext = createContext(null);
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(undefined);
 
-  // CHECK LOGIN STATUS
+  // CHECK AUTH STATUS
   useEffect(() => {
     axios
-      .get(`${API}/auth/me`, {
+      .get(`${API}/api/auth/me`, {
         withCredentials: true
       })
       .then((response) => {
@@ -28,7 +28,7 @@ export function AuthProvider({ children }) {
   // LOGIN
   async function login(email, password) {
     const response = await axios.post(
-      `${API}/auth/login`,
+      `${API}/api/auth/login`,
       { email, password },
       {
         withCredentials: true
@@ -42,7 +42,7 @@ export function AuthProvider({ children }) {
   // REGISTER
   async function register(data) {
     const response = await axios.post(
-      `${API}/auth/register`,
+      `${API}/api/auth/register`,
       data,
       {
         withCredentials: true
@@ -56,7 +56,7 @@ export function AuthProvider({ children }) {
   // LOGOUT
   async function logout() {
     await axios.post(
-      `${API}/auth/logout`,
+      `${API}/api/auth/logout`,
       {},
       {
         withCredentials: true
