@@ -13,7 +13,7 @@ app.use(express.json());
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
-  "https://hospito-1jxkr40yj-tapan-patidar-s-projects.vercel.app"
+  "https://hospito.vercel.app"
 ];
 
 app.use(
