@@ -51,14 +51,15 @@ app.post("/api/auth/login", (req, res) => {
       });
     }
 
-    return res.json({
-      token: "dummy-token",
-      user: {
-        id: "123",
-        name: "Test User",
-        email
-      }
-    });
+   return res.json({
+  token: "dummy-token",
+  user: {
+    id: "123",
+    name: "Test User",
+    email,
+    role: "doctor"
+  }
+});
   } catch (err) {
     return res.status(500).json({
       detail: "Login error"
@@ -83,12 +84,13 @@ app.post("/api/auth/register", (req, res) => {
 app.get("/api/auth/me", (req, res) => {
   try {
     return res.json({
-      user: {
-        id: "123",
-        name: "Demo User",
-        email: "demo@hospito.com"
-      }
-    });
+  user: {
+    id: "123",
+    name: "Demo User",
+    email: "demo@hospito.com",
+    role: "doctor"
+  }
+});
   } catch (err) {
     return res.status(500).json({
       detail: "Auth error"
