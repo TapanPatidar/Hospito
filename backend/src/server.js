@@ -9,14 +9,25 @@ const app = express();
 // -------------------- MIDDLEWARE --------------------
 app.use(express.json());
 
-// ✅ FIXED CORS FOR VERCEL + LOCAL + PRODUCTION
+// ✅ CORS FIXED FOR VERCEL + LOCALHOST
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  "https://hospito-1jxkr40yj-tapan-patidar-s-projects.vercel.app"
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:3000",
-      "https://hospito-1jxkr40yj-tapan-patidar-s-projects.vercel.app"
-    ],
+    origin: function (origin, callback) {
+      // allow requests with no origin
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   })
@@ -34,9 +45,10 @@ app.post("/api/auth/login", (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // TODO: replace with DB logic
     if (!email || !password) {
-      return res.status(400).json({ detail: "Missing credentials" });
+      return res.status(400).json({
+        detail: "Missing credentials"
+      });
     }
 
     return res.json({
@@ -48,7 +60,9 @@ app.post("/api/auth/login", (req, res) => {
       }
     });
   } catch (err) {
-    return res.status(500).json({ detail: "Login error" });
+    return res.status(500).json({
+      detail: "Login error"
+    });
   }
 });
 
@@ -59,7 +73,9 @@ app.post("/api/auth/register", (req, res) => {
       message: "User registered successfully"
     });
   } catch (err) {
-    return res.status(500).json({ detail: "Register error" });
+    return res.status(500).json({
+      detail: "Register error"
+    });
   }
 });
 
@@ -74,7 +90,9 @@ app.get("/api/auth/me", (req, res) => {
       }
     });
   } catch (err) {
-    return res.status(500).json({ detail: "Auth error" });
+    return res.status(500).json({
+      detail: "Auth error"
+    });
   }
 });
 
