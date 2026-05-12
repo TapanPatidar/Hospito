@@ -19,7 +19,7 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: function (origin, callback) {
-      // allow requests with no origin
+      // Allow requests with no origin
       if (!origin) return callback(null, true);
 
       if (allowedOrigins.includes(origin)) {
@@ -51,15 +51,15 @@ app.post("/api/auth/login", (req, res) => {
       });
     }
 
-   return res.json({
-  token: "dummy-token",
-  user: {
-    id: "123",
-    name: "Test User",
-    email,
-    role: "doctor"
-  }
-});
+    return res.json({
+      token: "dummy-token",
+      user: {
+        id: "123",
+        name: "Test User",
+        email,
+        role: "doctor"
+      }
+    });
   } catch (err) {
     return res.status(500).json({
       detail: "Login error"
@@ -81,21 +81,18 @@ app.post("/api/auth/register", (req, res) => {
 });
 
 // CURRENT USER
+// ✅ IMPORTANT FIX: Prevent auto-login
 app.get("/api/auth/me", (req, res) => {
-  try {
-    return res.json({
-  user: {
-    id: "123",
-    name: "Demo User",
-    email: "demo@hospito.com",
-    role: "doctor"
-  }
+  return res.status(401).json({
+    detail: "Not authenticated"
+  });
 });
-  } catch (err) {
-    return res.status(500).json({
-      detail: "Auth error"
-    });
-  }
+
+// LOGOUT
+app.post("/api/auth/logout", (req, res) => {
+  return res.json({
+    message: "Logged out successfully"
+  });
 });
 
 // -------------------- START SERVER --------------------
